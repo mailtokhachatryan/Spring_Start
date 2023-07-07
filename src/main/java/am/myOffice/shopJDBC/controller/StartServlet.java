@@ -21,7 +21,7 @@ public class StartServlet extends HelloServlet{
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String encodedString = CookieUtil.getCookieValueByName(req.getCookies(), Parameter.REMEMBER_COOKIE);
 
-        UserService userService = new UserServiceImpl(new UserRepositoryJdbcImpl(DatabaseConnection.getInstance()));
+        UserService userService = new UserServiceImpl();
 
         try {
             if (encodedString != null){

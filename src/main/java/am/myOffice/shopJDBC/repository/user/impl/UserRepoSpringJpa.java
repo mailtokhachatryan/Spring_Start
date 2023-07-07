@@ -3,11 +3,18 @@ package am.myOffice.shopJDBC.repository.user.impl;
 import am.myOffice.shopJDBC.model.User;
 import am.myOffice.shopJDBC.repository.user.UserRepository;
 import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Primary
+@Repository("springRepo")
+@Scope("prototype")
 public class UserRepoSpringJpa implements UserRepository {
 
     private final SessionFactory sessionFactory;

@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
 
 
         UserRepository userRepository = new UserRepositoryJdbcImpl(DatabaseConnection.getInstance());
-        UserService userService = new UserServiceImpl(userRepository);
+        UserService userService = new UserServiceImpl();
         var email = req.getParameter(Parameter.EMAIL_PARAMETER);
         var password = req.getParameter(Parameter.PASSWORD_PARAMETER);
         var rememberMe = req.getParameter(Parameter.REMEMBER_ME_PARAMETER);

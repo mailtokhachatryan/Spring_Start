@@ -5,6 +5,10 @@ import am.myOffice.shopJDBC.service.user.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -12,16 +16,8 @@ public class Main {
 
         var userService = context.getBean(UserService.class);
 
-        User user = User.builder()
-                .name("name")
-                .age(21)
-                .balance(65465)
-                .email("test@gmail.com")
-                .lastname("adsasd")
-                .password("asfasfasf")
-                .build();
+        System.out.println(userService.getUser(1L));
 
-        userService.register(user);
 
     }
 

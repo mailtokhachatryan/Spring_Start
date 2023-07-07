@@ -20,7 +20,7 @@ public class ChangePasswordServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserRepository userRepository = new UserRepositoryJdbcImpl(DatabaseConnection.getInstance());
-        UserService userService = new UserServiceImpl(userRepository);
+        UserService userService = new UserServiceImpl();
 
         var email = (String)req.getSession().getAttribute(Parameter.EMAIL_PARAMETER);
         var newPassword = req.getParameter(Parameter.NEW_PASSWORD_PARAMETER);

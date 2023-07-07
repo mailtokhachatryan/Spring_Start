@@ -20,7 +20,7 @@ public class RegisterServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserRepository userRepository = new UserRepositoryJdbcImpl(DatabaseConnection.getInstance());
-        UserService userService = new UserServiceImpl(userRepository);
+        UserService userService = new UserServiceImpl();
         User user = new User();
 
 
